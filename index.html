@@ -9,9 +9,9 @@
         <link rel="stylesheet" href="quizmain.css">
     </head>
     <body>
-        <header role="banner">
+        <!-- <header role="banner">
             <div>
-                <button class="reset">Re-Lace!</button>
+                <button class="reset" id="retake-button">Re-Lace!</button>
             </div>
             <section role="display">
                 <ul>
@@ -19,18 +19,32 @@
                     <li>Score:</li>
                 </ul>
             </section>
-        </header>
+        </header> -->
+        <header role="banner">
+            <div class="col-4">
+              <a href="index.html">
+              <img class="logo" img src="https://media.giphy.com/media/EyeiCsrG5uo36/giphy.gif" alt="Shoes In Hand Gif"/>
+              </a>
+            </div>
+            <div class="col-8">
+              <ul>
+                <li>Question: <span class="questionNumber">0</span>/10</li>
+                <li>Score: <span class="score">0</span></li>
+              </ul>
+            </div>
+          </header>
         <main role="main">
-            <section class="splash-page">
+            <section class="quizIntro">
                 <h1>Sneakerhead Quizstrike!</h1>
-                <p>
+                <p class="intro">
                 There are many reasons why Sneakerheads aka Sneaker Lovers are obsessed with shoes. <br>
                 From ASICS to Vans, LA to Japan, Sneakersheads will line up for hours to get the lastest and greatest. <br>
                 But do you know about Sneaker Culture's humble beginnings? Or is it all just show? <br>
                 Flex your knowledge and flex your kicks! <br>
                 </p>
-                <button class="start-quiz">Lace Up!</button>
+                <button type="button" class="startButton">Lace Up!</button>
             </section>
+            <div class="questionAnswerForm"></div>
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="quizindex.js" async defer></script>
