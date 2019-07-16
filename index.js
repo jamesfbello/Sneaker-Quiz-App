@@ -152,16 +152,15 @@ function rightFeedback() {
   iterateCorrectAnswers();
 }
 
-//Correct answer feedback UI template
+//Correct answer 
 const correctFeedback = `
     <section id="feedback-page" role="main">
       <h2 >Correct! The right answer is: ${ANSWERS[questionNum + 1]}</h2>
-      <img src="https://media.giphy.com/media/3o7absbD7PbTFQa0c8/giphy.gif" alt="Spongebod thumbs up">
     </section>
     <button id="js-next-button">Next</button>
   `;
 
-//Wrong answer feedback html
+//Wrong answer 
 function wrongFeedback() {
   $("#start-page").html(wrongTemplate(questionNum));
 }
@@ -173,7 +172,6 @@ function wrongTemplate(questionNum) {
         <h2>Sorry, wrong answer! The right answer was ${
           ANSWERS[questionNum - 1]
         }!</h2>
-        <img src="https://media.giphy.com/media/l4FGuhL4U2WyjdkaY/giphy.gif" alt="Trump Wrong">
       </section>
       <button id="js-next-button">Next</button>
   `;
