@@ -1,3 +1,10 @@
+"use strict";
+
+//global Variable declarations for initial question and initial correct answer points
+let questionNumber = 0;
+let score = 0;
+
+//questions bank object
 var questionBank = [
     {//question 1
       question: "What is Nike's trademark logo called?",
@@ -80,151 +87,148 @@ var questionBank = [
       correctAnswer: 'Phil Knight'
     }];
 
-
-    let questionNumber = 0;
-    let score = 0;
     
-    //generate question html
-    function generateQuestion () {
-      if (questionNumber < questionBank.length) {
-        return `<div class="question-${questionNumber}">
-        <h2>${questionBank[questionNumber].question}</h2>
-        <form>
-        <fieldset>
-        <label class="answerOption">
-        <input type="radio" value="${questionBank[questionNumber].answers[0]}" name="answer" required>
-        <span>${questionBank[questionNumber].answers[0]}</span>
-        </label>
-        <label class="answerOption">
-        <input type="radio" value="${questionBank[questionNumber].answers[1]}" name="answer" required>
-        <span>${questionBank[questionNumber].answers[1]}</span>
-        </label>
-        <label class="answerOption">
-        <input type="radio" value="${questionBank[questionNumber].answers[2]}" name="answer" required>
-        <span>${questionBank[questionNumber].answers[2]}</span>
-        </label>
-        <label class="answerOption">
-        <input type="radio" value="${questionBank[questionNumber].answers[3]}" name="answer" required>
-        <span>${questionBank[questionNumber].answers[3]}</span>
-        </label>
-        <button type="submit" class="submitButton">Submit</button>
-        </fieldset>
-        </form>
-        </div>`;
-    } else {
-        renderResults();
-        restartQuiz();
-        $('.questionNumber').text(10)
+//generate question html
+function generateQuestion () {
+  if (questionNumber < questionBank.length) {
+    return `<div class="question-${questionNumber}">
+    <h2>${questionBank[questionNumber].question}</h2>
+    <form>
+    <fieldset>
+    <label class="answerOption">
+    <input type="radio" value="${questionBank[questionNumber].answers[0]}" name="answer" required>
+    <span>${questionBank[questionNumber].answers[0]}</span>
+    </label>
+    <label class="answerOption">
+    <input type="radio" value="${questionBank[questionNumber].answers[1]}" name="answer" required>
+    <span>${questionBank[questionNumber].answers[1]}</span>
+    </label>
+    <label class="answerOption">
+    <input type="radio" value="${questionBank[questionNumber].answers[2]}" name="answer" required>
+    <span>${questionBank[questionNumber].answers[2]}</span>
+    </label>
+    <label class="answerOption">
+    <input type="radio" value="${questionBank[questionNumber].answers[3]}" name="answer" required>
+    <span>${questionBank[questionNumber].answers[3]}</span>
+    </label>
+    <button type="submit" class="submitButton">Submit</button>
+    </fieldset>
+    </form>
+    </div>`;
+  } else {
+      renderResults();
+      restartQuiz();
+      $('.questionNumber').text(10)
       }
     }
     
-    //increment question number
-    function changeQuestionNumber () {
-      //if (questionNumber < questionBank.length) {
-        questionNumber ++;
-      //}
-      $('.questionNumber').text(questionNumber+1);
-    }
+//increment question number
+function changeQuestionNumber () {
+  //if (questionNumber < questionBank.length) {
+    questionNumber ++;
+  //}
+    $('.questionNumber').text(questionNumber+1);
+  }
     
-    //increment score
-    function changeScore () {
-      score ++;
-    }
+//increment score
+  function changeScore () {
+    core ++;
+  }
     
-    //start quiz
-    //on startQuizButton click hide start div
-    //unhide quiz form div
-    function startQuiz () {
-      $('.quizStart').on('click', '.startButton', function (event) {
-        $('.quizStart').remove();
-        $('.questionAnswerForm').css('display', 'block');
-        $('.questionNumber').text(1);
-    });
-    }
+//start quiz
+//on startQuizButton click hide start div
+//unhide quiz form div
+function startQuiz () {
+  $('.quizStart').on('click', '.startButton', function (event) {
+    $('.quizStart').remove();
+    $('.questionAnswerForm').css('display', 'block');
+    $('.questionNumber').text(1);
+  });
+  }
     
-    // render question in DOM
-    function renderQuestion () {
-      $('.questionAnswerForm').html(generateQuestion());
-    }
+// render question in DOM
+function renderQuestion () {
+  $('.questionAnswerForm').html(generateQuestion());
+}
     
-    //user selects answer on submit run user feedback
-    function userSelectAnswer () {
-      $('form').on('submit', function (event) {
-        event.preventDefault();
-        let selected = $('input:checked');
-        let answer = selected.val();
-        let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
-        if (answer === correctAnswer) {
-          selected.parent().addClass('correct');
-          ifAnswerIsCorrect();
-        } else {
-          selected.parent().addClass('wrong');
-          ifAnswerIsWrong();
+//user selects answer on submit run user feedback
+function userSelectAnswer () {
+  $('form').on('submit', function (event) {
+    event.preventDefault();
+    let selected = $('input:checked');
+    let answer = selected.val();
+    let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
+    if (answer === correctAnswer) {
+      selected.parent().addClass('correct');
+      ifAnswerIsCorrect();
+    } else {
+        selected.parent().addClass('wrong');
+        ifAnswerIsWrong();
         }
       });
     }
     
-    function ifAnswerIsCorrect () {
-      userAnswerFeedbackCorrect();
-      updateScore();
-    }
+function ifAnswerIsCorrect () {
+    userAnswerFeedbackCorrect();
+    updateScore();
+}
     
-    function ifAnswerIsWrong () {
-      userAnswerFeedbackWrong();
-    }
+function ifAnswerIsWrong () {
+  userAnswerFeedbackWrong();
+}
     
-    //user feedback for correct answer
-    function userAnswerFeedbackCorrect () {
-      let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
-      $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
-    }
+//user feedback for correct answer
+function userAnswerFeedbackCorrect () {
+  let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
+  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
+}
     
-    //user feedback for wrong answer
-    function userAnswerFeedbackWrong () {
-      let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
-      $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
-    }
+//user feedback for wrong answer
+function userAnswerFeedbackWrong () {
+  let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
+  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
+}
     
-    //update score text
-    function updateScore () {
-      changeScore();
-      $('.score').text(score);
-    }
+//update score text
+function updateScore () {
+  changeScore();
+  $('.score').text(score);
+}
     
-    //when quiz is over this is the html for the page
-    function renderResults () {
-      if (score >= 8) {
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/7861/45604911205_8130ee91e1_h.jpg" alt="car expert icon"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
-      } else if (score < 8 && score >= 5) {
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost there, just a couple more steps!</h3><img src="https://live.staticflickr.com/4349/37124938546_6ed78203fd_h.jpg" alt="Air Jordan 1 in boxes arranged in steps"/><p>You got ${score} / 10</p><p>Try again for a better score and the title of Sneakerhead!</p><button class="restartButton">Restart Quiz</button></div>`);
-      } else {
-        $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You got tripped out because you have your shoes on backwards!</h3><img src="http://4.bp.blogspot.com/_3ZRXPWRNUzA/TQ-eYfMcLbI/AAAAAAAAAFs/APU3KqvWXJU/s1600/IMAG0277%255B1%255D.jpg" alt="child with his shoes on backwards"/><p>You got ${score} / 10</p><p>Do a bit more research and you should be able to pass in no time!</p><button class="restartButton">Restart Quiz</button></div>`);
-      }
-    }
+//when quiz is over this is the html for the page
+function renderResults () {
+  if (score >= 8) {
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/7861/45604911205_8130ee91e1_h.jpg" alt="car expert icon"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
+  } else if (score < 8 && score >= 5) {
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost there, just a couple more steps!</h3><img src="https://live.staticflickr.com/4349/37124938546_6ed78203fd_h.jpg" alt="Air Jordan 1 in boxes arranged in steps"/><p>You got ${score} / 10</p><p>Try again for a better score and the title of Sneakerhead!</p><button class="restartButton">Restart Quiz</button></div>`);
+  } else {
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You got tripped out because you have your shoes on backwards!</h3><img src="http://4.bp.blogspot.com/_3ZRXPWRNUzA/TQ-eYfMcLbI/AAAAAAAAAFs/APU3KqvWXJU/s1600/IMAG0277%255B1%255D.jpg" alt="child with his shoes on backwards"/><p>You got ${score} / 10</p><p>Do a bit more research and you should be able to pass in no time!</p><button class="restartButton">Restart Quiz</button></div>`);
+  }
+}
     
-    //what happens when the user clicks next
-    function renderNextQuestion () {
-      $('main').on('click', '.nextButton', function (event) {
-        changeQuestionNumber();
-        renderQuestion();
-        userSelectAnswer();
-      });
-    }
-    
-    //restart quiz function - reloads page to start quiz over
-    function restartQuiz () {
-      $('main').on('click', '.restartButton', function (event) {
-        location.reload();
-      });
-    }
-    
-    //run quiz functions
-    function createQuiz () {
-      startQuiz();
+//what happens when the user clicks next
+function renderNextQuestion () {
+  $('main').on('click', '.nextButton', function (event) {
+      changeQuestionNumber();
       renderQuestion();
       userSelectAnswer();
-      renderNextQuestion();
-    }
+  });
+}
     
-    $(createQuiz);
+//restart quiz function - reloads page to start quiz over
+function restartQuiz () {
+  $('main').on('click', '.restartButton', function (event) {
+  location.reload();
+      });
+}
+    
+//run quiz functions
+function handleQuiz () {
+  startQuiz();
+  renderQuestion();
+  userSelectAnswer();
+  renderNextQuestion();
+}
+    
+$(handleQuiz);
     
