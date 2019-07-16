@@ -57,7 +57,7 @@ h1{
     box-sizing: border-box;
 }
 body {
-background: url("https://i.imgur.com/U0uNtrp.jpg") no-repeat center fixed; 
+background: url("https://live.staticflickr.com/7861/45604911205_8130ee91e1_h.jpg") no-repeat center fixed; 
 background-size: cover;
 height: 100vh
 }
@@ -130,7 +130,7 @@ h1 {
 button {
     padding: 20px;
     border: none;
-    background-color: yellow;
+    background-color: orangered;
     color: #black;
     font-size: 18px;
     text-transform: uppercase;
@@ -169,7 +169,7 @@ label {
     line-height: 22px
 }
 label:hover, label:focus {
-    background-color: yellow
+    background-color: orangered
 }
 fieldset {
     border: none;
