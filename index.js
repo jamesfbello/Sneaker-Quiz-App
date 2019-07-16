@@ -1,6 +1,6 @@
 "use strict";
 // ------------------------------------------VERSION 1.0---------------------------------------
-let questionNum = 0;
+let questionNum = 1;
 let correctAnswers = 0;
 
 const createQuestionSet = [
@@ -155,7 +155,7 @@ function rightFeedback() {
 //Correct answer 
 const correctFeedback = `
     <section id="feedback-page" role="main">
-      <h2 >Correct! The right answer is: ${ANSWERS[questionNum + 1]}</h2>
+      <h2 >Correct! The right answer is: ${ANSWERS[questionNum - 1]}</h2>
     </section>
     <button id="js-next-button">Next</button>
   `;
