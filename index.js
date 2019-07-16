@@ -1,6 +1,6 @@
 "use strict";
 // ------------------------------------------VERSION 1.0---------------------------------------
-let questionNum = 1;
+let questionNum = 0;
 let correctAnswers = 0;
 
 const createQuestionSet = [
