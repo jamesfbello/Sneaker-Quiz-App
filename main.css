@@ -186,12 +186,15 @@ label {
 label:hover, label:focus {
     background-color: rgb(38, 157, 212);
 }
+
+input[type="radio"]:focus + span {
+    font-weight: bold;
+  }
+  
 fieldset {
     border: none;
 }
 input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
     width: 16px;
