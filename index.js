@@ -237,7 +237,7 @@ var questionBank = [
       correctAnswer: 'Swoosh'
     },
     {//question 2
-      question:'Who founded Adidas?',
+      question: 'Who founded Adidas?',
       answers: ['Phil Knight',
                 'Rudolf Dassler', 
                 'Tinker Hatfield', 
@@ -245,7 +245,7 @@ var questionBank = [
       correctAnswer: 'Adolf Dassler'
     },
     {//question 3
-      question:'What does ASICS stand for?',
+      question: 'What does ASICS stand for?',
       answers: ['A Short Interveled Core Study',
                 'Applications Stored Inside Cellular Shoes', 
                 'Anima Sana In Corpore Sano', 
@@ -253,7 +253,7 @@ var questionBank = [
       correctAnswer: 'Anima Sana In Corpore Sano'
     },
     {//question 4
-      question:'When did the Nike Air Jordan 1 first release?',
+      question: 'When did the Nike Air Jordan 1 first release?',
       answers: ['1990',
                 '1987',
                 '1985',
@@ -261,7 +261,7 @@ var questionBank = [
       correctAnswer: '1985'
     },
     {//question 5
-      question:'Which one of these shoes has NOT been showcased in a movie?',
+      question: 'Which one of these shoes has NOT been showcased in a movie?',
       answers: ['Yeezy 350 Boost "Beluga"',
                 'Air Jordan 11 "Space Jam"',
                 'Nike "Air Mag"',
@@ -269,7 +269,7 @@ var questionBank = [
       correctAnswer: 'Yeezy 350 Boost "Beluga"'
     },
     {//question 6
-      question:'Where is Nike HQ located?',
+      question: 'Where is Nike HQ located?',
       answers: ['Los Angeles, California',
                 'Beaverton, Oregon',
                 'New York City, NY',
@@ -285,7 +285,7 @@ var questionBank = [
       correctAnswer: 'Kanye West'
     },
     {//question 8
-      question:'What parent company owns Converse?',
+      question: 'What parent company owns Converse?',
       answers: ['Nike',
                 'Adidas',
                 'Vans',
@@ -293,7 +293,7 @@ var questionBank = [
       correctAnswer: 'Nike'
     },
     {//question 9
-      question:'Where was PUMA founded?',
+      question: 'Where was PUMA founded?',
       answers: ['United States',
                 'Germany', 
                 'Jamaica',
@@ -301,7 +301,7 @@ var questionBank = [
       correctAnswer: 'Germany'
     },
     {//question 10
-      question:'Which one of these designers has not designed a shoe for Nike?',
+      question: 'Which one of these designers has not designed a shoe for Nike?',
       answers: ['Virgil Abloh',
                 'Tinker Hatfield',
                 'Christian Tresser',
@@ -311,7 +311,7 @@ var questionBank = [
 
     
 //generate question html
-function generateQuestion () {
+function generateQuestion() {
   if (questionNumber < questionBank.length) {
     return `<div class="question-${questionNumber}">
     <h2>${questionBank[questionNumber].question}</h2>
@@ -345,36 +345,37 @@ function generateQuestion () {
     }
     
 //increment question number
-function changeQuestionNumber () {
+function changeQuestionNumber() {
   //if (questionNumber < questionBank.length) {
-    questionNumber ++;
+    questionNumber++;
   //}
-    $('.questionNumber').text(questionNumber+1);
+    $('.questionNumber').text(questionNumber + 1);
   }
     
 //increment score
-  function changeScore () {
-    core ++;
+  function changeScore() {
+    score++;
   }
     
 //start quiz
 //on startQuizButton click hide start div
 //unhide quiz form div
-function startQuiz () {
-  $('.quizStart').on('click', '.startButton', function (event) {
-    $('.quizStart').remove();
+function startQuiz() {
+	$('.startButton').click(function (event) {
+		console.log('clicked');
+		$('.quizIntro').css('display', 'none');
     $('.questionAnswerForm').css('display', 'block');
     $('.questionNumber').text(1);
   });
   }
     
 // render question in DOM
-function renderQuestion () {
+function renderQuestion() {
   $('.questionAnswerForm').html(generateQuestion());
 }
     
 //user selects answer on submit run user feedback
-function userSelectAnswer () {
+function userSelectAnswer() {
   $('form').on('submit', function (event) {
     event.preventDefault();
     let selected = $('input:checked');
@@ -390,37 +391,37 @@ function userSelectAnswer () {
       });
     }
     
-function ifAnswerIsCorrect () {
+function ifAnswerIsCorrect() {
     userAnswerFeedbackCorrect();
     updateScore();
 }
     
-function ifAnswerIsWrong () {
+function ifAnswerIsWrong() {
   userAnswerFeedbackWrong();
 }
     
 //user feedback for correct answer
-function userAnswerFeedbackCorrect () {
+function userAnswerFeedbackCorrect() {
   let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
   $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
 }
     
 //user feedback for wrong answer
-function userAnswerFeedbackWrong () {
+function userAnswerFeedbackWrong() {
   let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
   $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
 }
     
 //update score text
-function updateScore () {
+function updateScore() {
   changeScore();
   $('.score').text(score);
 }
     
 //when quiz is over this is the html for the page
-function renderResults () {
+function renderResults() {
   if (score >= 8) {
-    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/7861/45604911205_8130ee91e1_h.jpg" alt="car expert icon"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/65535/47974766017_7ad7bebc64_k.jpg" alt="Nike Sneakers With Car in the background"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
   } else if (score < 8 && score >= 5) {
     $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost there, just a couple more steps!</h3><img src="https://live.staticflickr.com/4349/37124938546_6ed78203fd_h.jpg" alt="Air Jordan 1 in boxes arranged in steps"/><p>You got ${score} / 10</p><p>Try again for a better score and the title of Sneakerhead!</p><button class="restartButton">Restart Quiz</button></div>`);
   } else {
@@ -429,7 +430,7 @@ function renderResults () {
 }
     
 //what happens when the user clicks next
-function renderNextQuestion () {
+function renderNextQuestion() {
   $('main').on('click', '.nextButton', function (event) {
       changeQuestionNumber();
       renderQuestion();
@@ -438,14 +439,14 @@ function renderNextQuestion () {
 }
     
 //restart quiz function - reloads page to start quiz over
-function restartQuiz () {
+function restartQuiz() {
   $('main').on('click', '.restartButton', function (event) {
   location.reload();
       });
 }
     
 //run quiz functions
-function handleQuiz () {
+function handleQuiz() {
   startQuiz();
   renderQuestion();
   userSelectAnswer();

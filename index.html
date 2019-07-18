@@ -26,12 +26,13 @@
                   </section> -->
         <!-- ---------------------VERSION 2.0------------------------------- -->
         <header role="banner">
-            <div class="col-4">
+            <div class="reset-area">
               <a href="index.html">
               <img class="logo" img src="https://media.giphy.com/media/EyeiCsrG5uo36/giphy.gif" alt="Shoes In Hand Gif"/>
               </a>
+              <p class="logo-text"><strong>RE-LACE</strong></p>
             </div>
-            <div class="col-8">
+            <div class="score-area">
               <ul>
                 <li>Question: <span class="questionNumber">0</span>/10</li>
                 <li>Score: <span class="score">0</span></li>
@@ -39,7 +40,7 @@
             </div>
           </header>
         <main role="main">
-            <section id="start-page" class="quizIntro">
+          <section class="quizIntro" id="start-page">
                 <h1>Sneakerhead Quizstrike!</h1>
                 <p class="intro">
                 There are many reasons why Sneakerheads aka Sneaker Lovers are obsessed with shoes. <br>
@@ -49,7 +50,32 @@
                 </p>
                 <button type="button" id="js-start-button" class="startButton">Lace Up!</button>
             </section>
-            <div class="questionAnswerForm"></div>
+            <div class="questionAnswerForm">
+              <div class="question-0">
+                <h2>What is Nike's trademark logo called?</h2>
+                <form>
+                  <fieldset>
+                    <label class="answerOption">
+                      <input type="radio" value="Check" name="answer" required="">
+                      <span>Check</span>
+                    </label>
+                    <label class="answerOption">
+                      <input type="radio" value="U-turn" name="answer" required="">
+                      <span>U-turn</span>
+                    </label>
+                    <label class="answerOption">
+                      <input type="radio" value="Swoosh" name="answer" required="">
+                      <span>Swoosh</span>
+                    </label>
+                    <label class="answerOption">
+                      <input type="radio" value="Zip Curve" name="answer" required="">
+                      <span>Zip Curve</span>
+                    </label>
+                    <button type="submit" class="submitButton">Submit</button>
+                  </fieldset>
+                </form>
+              </div>
+            </div>
         <!-- -----------------------END VERSION 2.0 ------------- -->
         </main>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
