@@ -421,11 +421,11 @@ function updateScore() {
 //when quiz is over this is the html for the page
 function renderResults() {
   if (score >= 8) {
-    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/65535/47974766017_7ad7bebc64_k.jpg" alt="Nike Sneakers With Car in the background"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You are a Sneakerhead!</h3><img src="https://live.staticflickr.com/65535/47974766017_7ad7bebc64_k.jpg" alt="Nike Sneakers With Car in the background" class="results-pic"/><p>You got ${score} / 10</p><p>You flexed your sneaker knowledge now go out and those shoes you have been eyeing, you deserve it!</p><button class="restartButton">Restart Quiz</button></div>`);
   } else if (score < 8 && score >= 5) {
-    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost there, just a couple more steps!</h3><img src="https://live.staticflickr.com/4349/37124938546_6ed78203fd_h.jpg" alt="Air Jordan 1 in boxes arranged in steps"/><p>You got ${score} / 10</p><p>Try again for a better score and the title of Sneakerhead!</p><button class="restartButton">Restart Quiz</button></div>`);
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>Almost there, just a couple more steps!</h3><img src="https://live.staticflickr.com/4349/37124938546_6ed78203fd_h.jpg" alt="Air Jordan 1 in boxes arranged in steps" class="results-pic" /><p>You got ${score} / 10</p><p>Try again for a better score and the title of Sneakerhead!</p><button class="restartButton">Restart Quiz</button></div>`);
   } else {
-    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You got tripped out because you have your shoes on backwards!</h3><img src="http://4.bp.blogspot.com/_3ZRXPWRNUzA/TQ-eYfMcLbI/AAAAAAAAAFs/APU3KqvWXJU/s1600/IMAG0277%255B1%255D.jpg" alt="child with his shoes on backwards"/><p>You got ${score} / 10</p><p>Do a bit more research and you should be able to pass in no time!</p><button class="restartButton">Restart Quiz</button></div>`);
+    $('.questionAnswerForm').html(`<div class="results correctFeedback"><h3>You got tripped up because you have your shoes on backwards!</h3><img src="http://4.bp.blogspot.com/_3ZRXPWRNUzA/TQ-eYfMcLbI/AAAAAAAAAFs/APU3KqvWXJU/s1600/IMAG0277%255B1%255D.jpg" alt="child with his shoes on backwards" class="results-pic" /><p>You got ${score} / 10</p><p>Do a bit more research and you should be able to pass in no time!</p><button class="restartButton">Restart Quiz</button></div>`);
   }
 }
     

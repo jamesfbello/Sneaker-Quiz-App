@@ -72,7 +72,6 @@ html {
   height: 100vh;
 }
 }
-/*header styling*/
 
 header {
     width: 100%;
@@ -81,16 +80,11 @@ header {
     font-size: 20px;
 }
 
-.logo{
-    display: flex;
-}
-
 .logo-text{
     display: flex;
     text-align: center;
 }
 
-/* Clearfix */
 
 header::before,
 header::after {
@@ -115,8 +109,9 @@ header::after {
     width: 66.67%
 }
 .logo {
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
+    display: flex;
 }
 header ul li {
     padding: 10px 20px;
@@ -130,7 +125,8 @@ header ul {
     text-align: right;
     margin-top: 50px
 }
-/*Quiz start screen styling*/
+
+/*quiz form css*/
 
 .quizIntro {
     display: block;
@@ -150,7 +146,7 @@ button {
     padding: 20px;
     border: none;
     background-color: orangered;
-    color: #black;
+    color: #white;
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
@@ -224,7 +220,7 @@ form button {
     padding: 20px;
     border: none;
     background-color: #yellow;
-    color: #black;
+    color: #white;
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
@@ -236,7 +232,7 @@ form button {
 }
 form button:hover, form button:focus {
     background-color: #green;
-    color: #black
+    color: #white;
 }
 .answer {
     flex: 1 1 auto;
@@ -271,7 +267,7 @@ h3 {
     margin-bottom: 20px;
 }
 .results img {
-    width: 150px;
+    width:500px;
     height: auto;
 }
 .results p:first-of-type {
@@ -295,10 +291,15 @@ h3 {
 }
 @media screen and (max-width: 768px) {
     .logo {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         display: block;
         margin: auto;
+    }
+    .logo-text{
+        display: block
+        text-align: center;
+        margin: auto
     }
     header ul {
         margin: 10px;
