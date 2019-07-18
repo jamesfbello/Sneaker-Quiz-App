@@ -146,7 +146,7 @@ button {
     padding: 20px;
     border: none;
     background-color: orangered;
-    color: #white;
+    color: white;
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
@@ -156,7 +156,7 @@ button {
 }
 button:hover, button:focus {
     background-color: rgb(38, 157, 212);
-    color: #green
+    color: white;
 }
 main div {
     margin: 0 auto;
@@ -184,7 +184,7 @@ label {
     line-height: 22px
 }
 label:hover, label:focus {
-    background-color: orangered
+    background-color: rgb(38, 157, 212);
 }
 fieldset {
     border: none;
@@ -204,7 +204,7 @@ input {
     top: 2px;
 }
 input:checked {
-    border: 8px solid green;
+    border: 8px solid orangered;
 }
 input[type=radio] {
     flex: 0 0 auto;
@@ -219,8 +219,8 @@ h2 {
 form button {
     padding: 20px;
     border: none;
-    background-color: #yellow;
-    color: #white;
+    background-color:orangered;
+    color: white;
     font-size: 18px;
     text-transform: uppercase;
     border-radius: 0;
@@ -231,8 +231,8 @@ form button {
     text-align: left;
 }
 form button:hover, form button:focus {
-    background-color: #green;
-    color: #white;
+    background-color:rgb(38, 157, 212)n;
+    color: white;
 }
 .answer {
     flex: 1 1 auto;
