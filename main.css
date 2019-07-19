@@ -97,8 +97,8 @@ header::after {
 .reset-area,
 .score-area {
     float: left;
-    padding-left: 1.04166666%;
-    padding-right: 1.04166666%;
+    padding-left: 3%;
+    padding-right: 3%;
 }
 .reset-area {
     width: 33.33%;
@@ -106,7 +106,7 @@ header::after {
     flex-direction: column;
 }
 .score-area {
-    width: 66.67%
+    width: 66%
 }
 .logo {
     height: 100px;
@@ -162,13 +162,13 @@ main div {
     margin: 0 auto;
 }
 label:nth-child(1) {
-    background-color: grey
+    background-color: darkgray
 }
 label:nth-child(2) {
     background-color: gray
 }
 label:nth-child(3) {
-    background-color: gray
+    background-color: darkgrey
 }
 label:nth-child(4) {
     background-color: gray
@@ -178,7 +178,6 @@ label {
     margin-bottom: 10px;
     display: flex;
     color: white;
-    text-transform: uppercase;
     cursor: pointer;
     transition: all 0.3s ease-out;
     line-height: 22px
@@ -189,12 +188,15 @@ label:hover, label:focus {
 
 input[type="radio"]:focus + span {
     font-weight: bold;
+    text-transform: uppercase;
   }
-  
+
 fieldset {
     border: none;
 }
 input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     border-radius: 50%;
     width: 16px;
@@ -212,12 +214,12 @@ input:checked {
 input[type=radio] {
     flex: 0 0 auto;
     margin-right: 10px;
+    text-transform: uppercase;
 }
 h2 {
     text-align: left;
     margin-bottom: 40px;
     color: white;
-    text-transform: uppercase
 }
 form button {
     padding: 20px;
@@ -225,7 +227,6 @@ form button {
     background-color:orangered;
     color: white;
     font-size: 18px;
-    text-transform: uppercase;
     border-radius: 0;
     cursor: pointer;
     transition: all 0.3s ease;
