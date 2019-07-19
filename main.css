@@ -55,6 +55,10 @@ h1{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Helvetica Neue"; 
+    font-style: normal; 
+    font-variant: small-caps; 
+    font-weight: 400;
 }
 body {
 background: 
@@ -84,7 +88,6 @@ header {
     display: flex;
     text-align: center;
 }
-
 
 header::before,
 header::after {
@@ -188,7 +191,6 @@ label:hover, label:focus {
 
 input[type="radio"]:focus + span {
     font-weight: bold;
-    text-transform: uppercase;
   }
 
 fieldset {

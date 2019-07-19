@@ -403,13 +403,13 @@ function ifAnswerIsWrong() {
 //user feedback for correct answer
 function userAnswerFeedbackCorrect() {
   let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
-  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
+  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>Nice! You got it right!</b></p><button type=button class="nextButton">Next</button></div>`);
 }
     
 //user feedback for wrong answer
 function userAnswerFeedbackWrong() {
   let correctAnswer = `${questionBank[questionNumber].correctAnswer}`;
-  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>You got it wrong</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
+  $('.questionAnswerForm').html(`<div class="correctFeedback"><div class="icon"></div><p><b>Oops! That's incorrect</b><br>the correct answer is <span>"${correctAnswer}"</span></p><button type=button class="nextButton">Next</button></div>`);
 }
     
 //update score text
