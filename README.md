@@ -7,7 +7,7 @@ This Sneaker Quiz App is the first major project for Full Stack Flex Developer C
 User experience requirements
 The following requirements cover what the app must do, from the user's perspective.
 
-The starting screen should have a button that users can click to start the quiz.
+The starting screen should have a button that users can click to start the quiz. <br> 
 Users should be prompted through a series of at least 5 multiple choice questions that they can answer.
 Users should be asked questions 1 after the other. 
 Users should only be prompted with 1 question at a time. 
