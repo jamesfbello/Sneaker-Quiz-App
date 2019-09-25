@@ -1,6 +1,6 @@
 # Sneaker-Quiz-App
 
-Live Page: https://jbello1222.github.io/Sneaker-Quiz-App/
+Live Page: https://jamesfbello.github.io/Sneaker-Quiz-App/
 
 This Sneaker Quiz App is the first major project for Full Stack Flex Developer Course at Thinkful. The requirements can be found below.
 
